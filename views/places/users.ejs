@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+    
+    <div class = "container">
+            <header class = "jumbotron">
+                <div class = "container">     
+                    <h1>Welcome to Hyderabad</h1>
+                    <p>Here are all the <%= name %> Registered</p>
+                </div>
+            </header> 
+            
+            <!--places is coming from app.js where ref = 1 -->
+                        
+        <div class ="row text-center" style= "display: flex; flex-wrap: wrap">
+            <% users.forEach(function(user){ %>
+                <div class ="col-md-3 col-sm-6">
+                    <div class = "thumbnail spthumbnail">
+                        <img src = "images/facebook-default.jpg">
+                    <div class="caption">
+                        <h4><%= user.name %></h4>
+                    </div>
+                        <a href = "<%= url %>/<%= user._id %>" class = "btn btn-primary">More Info</a>
+                    </div>
+                    
+                </div>
+            <% }); %>
+        </div>    
+    </div>
+<% include ../partials/footer %>
+
